@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Change your web tab name here -->
+    <!-- 1. Customize your tab title here -->
     <title>Get Photoshop</title>
     
-    <!-- Custom favicon from your GitHub -->
     <link rel="icon" type="image/png" href="favicon.png">
 
     <script>
-        // 1. PASTE YOUR ADOBE AFFILIATE LINK HERE
+        // 2. PASTE LINK HERE (For the automatic redirect once out of TikTok)
         const affiliateURL = "https://prf.hn/l/20Bd3Lj";
 
-        // 2. Check if the user is stuck inside TikTok's inner web container
-        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        const isTikTok = userAgent.includes("TikTok");
+        // Check for every possible mobile variant of the TikTok app container
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const isTikTok = ua.includes("TikTok") || ua.includes("musical_ly") || ua.includes("trill");
 
-        // 3. THE MAGIC: If they are NOT in TikTok (meaning they successfully opened in Safari/Chrome),
-        // instantly forward them to Adobe before they even see this layout.
+        // If they successfully escaped TikTok, instantly shoot them to Adobe
         if (!isTikTok) {
             window.location.replace(affiliateURL);
         }
@@ -68,11 +66,9 @@
 </head>
 <body>
 
-    <!-- Bouncing indicator arrow pointing to TikTok's top right menu -->
     <div class="arrow-indicator">↑</div>
 
     <div class="card">
-        <!-- Loads your uploaded photoshop logo image from GitHub -->
         <img class="ps-logo" src="photoshop-logo.png" alt="Photoshop Logo">
 
         <h2>Get Photoshop Here</h2>
@@ -82,7 +78,7 @@
             Tap the <span class="highlight">••• button</span> in the top right, then select <span class="highlight">"Open in browser"</span>.
         </p>
 
-        <!-- Fallback button in case they just want to click manually inside TikTok -->
+        <!-- 3. PASTE LINK HERE (Fallback blue button) -->
         <a href="https://prf.hn/l/20Bd3Lj" class="action-button">👉 Open Photoshop Offer</a>
     </div>
 
