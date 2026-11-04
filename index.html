@@ -6,8 +6,23 @@
     <!-- Change your web tab name here -->
     <title>Get Photoshop</title>
     
-    <!-- This links your custom favicon to the browser tab -->
+    <!-- Custom favicon from your GitHub -->
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <script>
+        // 1. PASTE YOUR ADOBE AFFILIATE LINK HERE
+        const affiliateURL = "https://prf.hn/l/20Bd3Lj";
+
+        // 2. Check if the user is stuck inside TikTok's inner web container
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const isTikTok = userAgent.includes("TikTok");
+
+        // 3. THE MAGIC: If they are NOT in TikTok (meaning they successfully opened in Safari/Chrome),
+        // instantly forward them to Adobe before they even see this layout.
+        if (!isTikTok) {
+            window.location.replace(affiliateURL);
+        }
+    </script>
 
     <style>
         body {
@@ -24,12 +39,11 @@
             max-width: 340px; width: 85%;
             display: flex; flex-direction: column; align-items: center;
         }
-        /* Your custom Photoshop image styling */
         .ps-logo { 
             width: 80px; 
             height: auto; 
             margin-bottom: 15px; 
-            border-radius: 14px; /* Optional: adds smooth rounded corners to your image */
+            border-radius: 14px;
         }
         .arrow-indicator {
             position: fixed; top: 15px; right: 20px;
@@ -68,7 +82,7 @@
             Tap the <span class="highlight">••• button</span> in the top right, then select <span class="highlight">"Open in browser"</span>.
         </p>
 
-        <!-- REPLACE THIS WITH YOUR ADOBE AFFILIATE LINK -->
+        <!-- Fallback button in case they just want to click manually inside TikTok -->
         <a href="https://prf.hn/l/20Bd3Lj" class="action-button">👉 Open Photoshop Offer</a>
     </div>
 
