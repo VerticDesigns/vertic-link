@@ -27,7 +27,7 @@
         body {
             margin: 0; padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #ffffff; /* Clean white backdrop for invisible loading feel */
+            background-color: #ffffff;
             color: #000000;
             display: flex;
             flex-direction: column;
@@ -39,7 +39,7 @@
 
         /* Top Center Text Layout */
         .header-container {
-            margin-top: 100px; /* Positions perfectly near the top center */
+            margin-top: 100px;
             width: 90%;
             max-width: 400px;
             z-index: 10;
@@ -68,29 +68,36 @@
             font-weight: 700;
         }
 
-        /* Heavy Block Upward Bouncing Arrow */
-        .arrow-indicator {
+        /* Clean CSS Bold Arrow - Will look identical on iOS & Android */
+        .arrow-container {
             position: fixed;
-            top: 15px;
-            right: 14px;
-            font-size: 56px; /* Thick and distinct visual presence */
-            font-weight: 900; /* Max line weight */
-            color: #000000;
+            top: 25px;
+            right: 15px; /* Decreased to move it closer to the right edge */
             z-index: 1000;
-            user-select: none;
-            animation: aggressiveBounce 1.4s infinite ease-in-out;
+            animation: aggressiveBounce 2.5s infinite ease-in-out;
+        }
+
+        .arrow-icon {
+            width: 24px;
+            height: 24px;
+            border-top: 8px solid #000000;  /* Adjust thickness here */
+            border-left: 8px solid #000000; /* Adjust thickness here */
+            transform: rotate(45deg);       /* Rotates the corner into an upward arrow */
+            display: block;
         }
 
         @keyframes aggressiveBounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-12px) scale(1.05); } /* Harder bounce dynamic */
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Thick block arrow targeting TikTok's top-right menu -->
-    <div class="arrow-indicator">⬆</div>
+    <!-- CSS-driven arrow container -->
+    <div class="arrow-container">
+        <span class="arrow-icon"></span>
+    </div>
 
     <div class="header-container">
         <h2>Tap the <span class="highlight">•••</span> button</h2>
